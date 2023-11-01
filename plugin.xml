@@ -62,8 +62,6 @@
         <source-file src="src/ios/CDVBackgroundGeolocation.m" />
         <header-file src="src/ios/CDVBackgroundGeolocation.h" />
 
-        <config-file target="*-Info.plist" parent="ITSAppUsesNonExemptEncryption">
-
         <!-- background-geolocation -->
         <preference name="LOCATION_ALWAYS_AND_WHEN_IN_USE_USAGE_DESCRIPTION" default="[CHANGEME] Background location tracking is required for our app so we can..." />
 		<config-file parent="NSLocationAlwaysAndWhenInUseUsageDescription" target="*-Info.plist">
