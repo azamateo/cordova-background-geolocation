@@ -80,7 +80,6 @@
 			<string>$MOTION_USAGE_DESCRIPTION</string>
 		</config-file>
 		<!-- /background-geolocation -->
-
      </platform>
 
      <!-- android -->
