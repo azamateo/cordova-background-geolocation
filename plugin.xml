@@ -61,10 +61,40 @@
         <framework src="src/ios/TSLocationManager.xcframework" custom="true" />
         <source-file src="src/ios/CDVBackgroundGeolocation.m" />
         <header-file src="src/ios/CDVBackgroundGeolocation.h" />
+
+        <config-file target="*-Info.plist" parent="ITSAppUsesNonExemptEncryption">
+
+        <!-- background-geolocation -->
+        <preference name="LOCATION_ALWAYS_AND_WHEN_IN_USE_USAGE_DESCRIPTION" default="[CHANGEME] Background location tracking is required for our app so we can..." />
+		<config-file parent="NSLocationAlwaysAndWhenInUseUsageDescription" target="*-Info.plist">
+			<string>$LOCATION_ALWAYS_AND_WHEN_IN_USE_USAGE_DESCRIPTION</string>
+		</config-file>
+        <preference name="LOCATION_ALWAYS_USAGE_DESCRIPTION" default="[CHANGEME pre-iOS11.  No longer used with iOS 12] Background location tracking is required for our app so we can..." />
+		<config-file parent="NSLocationAlwaysUsageDescription" target="*-Info.plist">
+			<string>$LOCATION_ALWAYS_USAGE_DESCRIPTION</string>
+		</config-file>
+        <preference name="LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION" default="[CHANGEME] Background location tracking is required for our app so we can..." />
+		<config-file parent="NSLocationWhenInUseUsageDescription" target="*-Info.plist">
+			<string>$LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION</string>
+		</config-file>
+        <preference name="MOTION_USAGE_DESCRIPTION" default="[CHANGEME] Device motion updates help determine when the device is stationary so the app can save power by turning off location-updates" />
+		<config-file parent="NSMotionUsageDescription" target="*-Info.plist">
+			<string>$MOTION_USAGE_DESCRIPTION</string>
+		</config-file>
+		<!-- /background-geolocation -->
+
      </platform>
 
      <!-- android -->
     <platform name="android">
+          <!-- Cordova Background Geolocation License -->
+      <config-file parent="/manifest/application" target="app/src/main/AndroidManifest.xml">
+          <meta-data
+            android:name="com.transistorsoft.locationmanager.license"
+            android:value="$LICENSE_KEY" />
+      </config-file>
+
+
         <preference name="GOOGLE_API_VERSION" default="20.+" />
         <preference name="HMS_LOCATION_VERSION" default="6.9.0.300" />
         <preference name="OKHTTP_VERSION" default="3.12.+" />
