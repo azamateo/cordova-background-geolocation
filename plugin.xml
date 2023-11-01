@@ -90,6 +90,7 @@
      <!-- android -->
     <platform name="android">
           <!-- Cordova Background Geolocation License -->
+    <preference name="LICENSE_KEY" default="[CHANGEME] LICESNSE KEY" />
       <config-file parent="/manifest/application" target="app/src/main/AndroidManifest.xml">
           <meta-data
             android:name="com.transistorsoft.locationmanager.license"
