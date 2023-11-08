@@ -126,7 +126,7 @@
                 <param name="android-package" value="com.transistorsoft.cordova.bggeo.CDVBackgroundGeolocation"/>
             </feature>
         </config-file>
-            <preference name="ANDROIDXENABLED" value="true" />
+            <preference name="AndroidXEnabled" default="true" />
      </platform>
 
      <!-- Browser (mock) -->
