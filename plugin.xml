@@ -88,6 +88,7 @@
      </platform>
 
      <!-- android -->
+     
     <platform name="android">
     <preference name="AndroidXEnabled" value="true" />
           <!-- Cordova Background Geolocation License -->
