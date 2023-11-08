@@ -9,7 +9,7 @@
     <description>The most sophisticated, battery-efficient background-geolocation and geofencing plugin for Cordova</description>
     <license>MIT</license>
     <keywords>cordova, phonegap, background geolocation, background, location, tracking, geofence, geofencing</keywords>
-
+    <variable name="ANDROIDXENABLED" value="true" />
     <engines>
         <engine name="cordova" version=">=7.1.0"/>
         <engine name="cordova-android" version=">=7.0.0"/>
@@ -101,7 +101,7 @@
       <config-file parent="/manifest" target="app/src/main/AndroidManifest.xml">
           <uses-permission android:minSdkVersion="34" android:name="android.permission.USE_EXACT_ALARM" />
       </config-file>
-
+      
         <preference name="GOOGLE_API_VERSION" default="20.+" />
         <preference name="HMS_LOCATION_VERSION" default="6.9.0.300" />
         <preference name="OKHTTP_VERSION" default="3.12.+" />
@@ -127,7 +127,7 @@
                 <param name="android-package" value="com.transistorsoft.cordova.bggeo.CDVBackgroundGeolocation"/>
             </feature>
         </config-file>
-            <preference name="AndroidXEnabled" default="true" value=$ANDROIDXENABLED />
+            <preference name="AndroidXEnabled" value="true" />
      </platform>
 
      <!-- Browser (mock) -->
