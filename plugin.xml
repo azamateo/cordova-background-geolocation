@@ -101,7 +101,7 @@
       <config-file parent="/manifest" target="app/src/main/AndroidManifest.xml">
           <uses-permission android:minSdkVersion="34" android:name="android.permission.USE_EXACT_ALARM" />
       </config-file>
-      
+
         <preference name="GOOGLE_API_VERSION" default="20.+" />
         <preference name="HMS_LOCATION_VERSION" default="6.9.0.300" />
         <preference name="OKHTTP_VERSION" default="3.12.+" />
@@ -127,7 +127,7 @@
                 <param name="android-package" value="com.transistorsoft.cordova.bggeo.CDVBackgroundGeolocation"/>
             </feature>
         </config-file>
-            <preference name="AndroidXEnabled" value="true" />
+            <preference name="AndroidXEnabled" default="true" value=$ANDROIDXENABLED />
      </platform>
 
      <!-- Browser (mock) -->
