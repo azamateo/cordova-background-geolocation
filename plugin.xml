@@ -88,9 +88,8 @@
      </platform>
 
      <!-- android -->
-     
+
     <platform name="android">
-    <preference name="AndroidXEnabled" value="true" />
           <!-- Cordova Background Geolocation License -->
     <preference name="LICENSE_KEY" default="[CHANGEME] LICESNSE KEY" />
       <config-file parent="/manifest/application" target="app/src/main/AndroidManifest.xml">
