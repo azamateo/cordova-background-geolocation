@@ -96,6 +96,7 @@
           <meta-data
             android:name="com.transistorsoft.locationmanager.license"
             android:value="$LICENSE_KEY" />
+                 <uses-permission android:minSdkVersion="34" android:name="android.permission.USE_EXACT_ALARM" />
       </config-file>
 
 
@@ -124,9 +125,6 @@
                 <param name="android-package" value="com.transistorsoft.cordova.bggeo.CDVBackgroundGeolocation"/>
             </feature>
         </config-file>
-        <config-file parent="/manifest" target="app/src/main/AndroidManifest.xml">
-          <uses-permission android:minSdkVersion="34" android:name="android.permission.USE_EXACT_ALARM" />
-      </config-file>
      </platform>
 
      <!-- Browser (mock) -->
