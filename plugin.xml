@@ -67,19 +67,19 @@
         <header-file src="src/ios/CDVBackgroundGeolocation.h" />
 
         <!-- background-geolocation -->
-        <preference name="LOCATION_ALWAYS_AND_WHEN_IN_USE_USAGE_DESCRIPTION" default="[CHANGEME] Background location tracking is required for our app so we can..." />
+        <preference name="LOCATION_ALWAYS_AND_WHEN_IN_USE_USAGE_DESCRIPTION" default="Для обеспечения точной геолокации и удобства использования, приложение требует постоянного доступа к вашему местоположению, как в режиме использования, так и в фоновом режиме." />
 		<config-file parent="NSLocationAlwaysAndWhenInUseUsageDescription" target="*-Info.plist">
 			<string>$LOCATION_ALWAYS_AND_WHEN_IN_USE_USAGE_DESCRIPTION</string>
 		</config-file>
-        <preference name="LOCATION_ALWAYS_USAGE_DESCRIPTION" default="[CHANGEME pre-iOS11.  No longer used with iOS 12] Background location tracking is required for our app so we can..." />
+        <preference name="LOCATION_ALWAYS_USAGE_DESCRIPTION" default="Для обеспечения точной геолокации и удобства использования, приложение требует постоянного доступа к вашему местоположению, как в режиме использования, так и в фоновом режиме." />
 		<config-file parent="NSLocationAlwaysUsageDescription" target="*-Info.plist">
 			<string>$LOCATION_ALWAYS_USAGE_DESCRIPTION</string>
 		</config-file>
-        <preference name="LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION" default="[CHANGEME] Background location tracking is required for our app so we can..." />
+        <preference name="LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION" default="Для определения вашего местоположения и предоставления персонализированных услуг приложение требует доступа к геолокации в режиме использования." />
 		<config-file parent="NSLocationWhenInUseUsageDescription" target="*-Info.plist">
 			<string>$LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION</string>
 		</config-file>
-        <preference name="MOTION_USAGE_DESCRIPTION" default="[CHANGEME] Device motion updates help determine when the device is stationary so the app can save power by turning off location-updates" />
+        <preference name="MOTION_USAGE_DESCRIPTION" default="Для улучшения пользовательского опыта и предоставления более точных данных о движении, приложение запрашивает доступ к датчикам движения вашего устройства." />
 		<config-file parent="NSMotionUsageDescription" target="*-Info.plist">
 			<string>$MOTION_USAGE_DESCRIPTION</string>
 		</config-file>
@@ -90,8 +90,12 @@
      
     <platform name="android">
 
+    <resource-file 
+         src="BackgroundGeolocationHeadlessTask.java"
+         target="app/src/main/java/com/transistorsoft/cordova/bggeo/BackgroundGeolocationHeadlessTask.java" />
+
           <!-- Cordova Background Geolocation License -->
-    <preference name="LICENSE_KEY" default="[CHANGEME] LICESNSE KEY" />
+    <preference name="LICENSE_KEY" default="[License Key]" />
       <config-file parent="/manifest/application" target="app/src/main/AndroidManifest.xml">
           <meta-data
             android:name="com.transistorsoft.locationmanager.license"
