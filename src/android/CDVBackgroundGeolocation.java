@@ -1,4 +1,4 @@
-package kz.beeline.lc.FixFinderMobile;
+package com.transistorsoft.cordova.bggeo;
 
 import com.transistorsoft.locationmanager.adapter.BackgroundGeolocation;
 import com.transistorsoft.locationmanager.adapter.TSConfig;
@@ -118,7 +118,7 @@ public class CDVBackgroundGeolocation extends CordovaPlugin {
         config.useCLLocationAccuracy(true);
         // Ensure HeadlessJobService is set.
         config.updateWithBuilder()
-            .setHeadlessJobService(getClass().getPackage().getName() + "." + HEADLESS_JOB_SERVICE_CLASS)
+            .setHeadlessJobService("kz.beeline.lc.FixFinderMobile"+ "." + HEADLESS_JOB_SERVICE_CLASS)
             .commit();
 
         BackgroundGeolocation adapter = getAdapter();
@@ -1234,7 +1234,7 @@ public class CDVBackgroundGeolocation extends CordovaPlugin {
     }
 
     private JSONObject setHeadlessJobService(JSONObject params) throws JSONException {
-        params.put("headlessJobService", getClass().getPackage().getName() + "." + HEADLESS_JOB_SERVICE_CLASS);
+        params.put("headlessJobService", "kz.beeline.lc.FixFinderMobile"+ "." + HEADLESS_JOB_SERVICE_CLASS);
         return params;
     }
 
