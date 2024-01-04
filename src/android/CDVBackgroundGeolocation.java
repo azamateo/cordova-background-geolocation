@@ -1,4 +1,4 @@
-package com.transistorsoft.cordova.bggeo;
+package kz.beeline.lc.FixFinderMobile;
 
 import com.transistorsoft.locationmanager.adapter.BackgroundGeolocation;
 import com.transistorsoft.locationmanager.adapter.TSConfig;
