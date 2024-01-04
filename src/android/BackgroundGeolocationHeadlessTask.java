@@ -1,4 +1,4 @@
-package kz.beeline.lc.FixFinderMobile;
+package com.transistorsoft.cordova.bggeo;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
