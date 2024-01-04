@@ -1,13 +1,14 @@
 package com.transistorsoft.cordova.bggeo;
 
 import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import org.json.JSONObject;
 
 import com.transistorsoft.locationmanager.adapter.BackgroundGeolocation;
 import com.transistorsoft.locationmanager.event.ActivityChangeEvent;
-import com.transistorsoft.locationmanager.event.GeofenceEvent;
-import com.transistorsoft.locationmanager.event.GeofencesChangeEvent;
 import com.transistorsoft.locationmanager.event.ConnectivityChangeEvent;
+import com.transistorsoft.locationmanager.event.GeofenceEvent;
 import com.transistorsoft.locationmanager.event.HeadlessEvent;
 import com.transistorsoft.locationmanager.event.HeartbeatEvent;
 import com.transistorsoft.locationmanager.event.MotionChangeEvent;
@@ -16,7 +17,7 @@ import com.transistorsoft.locationmanager.http.HttpResponse;
 import com.transistorsoft.locationmanager.location.TSLocation;
 import com.transistorsoft.locationmanager.logger.TSLog;
 
-import org.json.JSONException;
+
 /**
  * BackgroundGeolocationHeadlessTask
  * This component allows you to receive events from the BackgroundGeolocation plugin in the native Android environment while your app has been *terminated*,
@@ -30,7 +31,7 @@ import org.json.JSONException;
 
 public class BackgroundGeolocationHeadlessTask  {
 
-    @Subscribe
+    @Subscribe(threadMode=ThreadMode.MAIN)
     public void onHeadlessTask(HeadlessEvent event) {
         String name = event.getName();
         TSLog.logger.debug("\uD83D\uDC80  event: " + event.getName());
@@ -39,11 +40,7 @@ public class BackgroundGeolocationHeadlessTask  {
         if (name.equals(BackgroundGeolocation.EVENT_TERMINATE)) {
             JSONObject state = event.getTerminateEvent();
         } else if (name.equals(BackgroundGeolocation.EVENT_LOCATION)) {
-            try {
-                TSLocation location = event.getLocationEvent();
-            } catch (JSONException e) {
-                TSLog.logger.error(e.getMessage(), e);
-            }
+            TSLocation location = event.getLocationEvent();
         } else if (name.equals(BackgroundGeolocation.EVENT_MOTIONCHANGE)) {
             MotionChangeEvent motionChangeEvent = event.getMotionChangeEvent();
             TSLocation location = motionChangeEvent.getLocation();
@@ -61,16 +58,14 @@ public class BackgroundGeolocationHeadlessTask  {
             JSONObject state = event.getBootEvent();
         } else if (name.equals(BackgroundGeolocation.EVENT_GEOFENCE)) {
             GeofenceEvent geofenceEvent = event.getGeofenceEvent();
-        } else if (name.equals(BackgroundGeolocation.EVENT_GEOFENCESCHANGE)) {
-            GeofencesChangeEvent geofencesChangeEvent = event.getGeofencesChangeEvent();
         } else if (name.equals(BackgroundGeolocation.EVENT_HEARTBEAT)) {
             HeartbeatEvent heartbeatEvent = event.getHeartbeatEvent();
-        } else if (name.equals(BackgroundGeolocation.EVENT_NOTIFICATIONACTION)) {
-            String buttonId = event.getNotificationEvent();
-        } else if (name.equals(BackgroundGeolocation.EVENT_CONNECTIVITYCHANGE)) {
-            ConnectivityChangeEvent connectivityChangeEvent = event.getConnectivityChangeEvent();
         } else if (name.equals(BackgroundGeolocation.EVENT_ENABLEDCHANGE)) {
             boolean enabled = event.getEnabledChangeEvent();
+        } else if (name.equals(BackgroundGeolocation.EVENT_CONNECTIVITYCHANGE)) {
+            ConnectivityChangeEvent connectivityChangeEvent = event.getConnectivityChangeEvent();
+        } else if (name.equals(BackgroundGeolocation.EVENT_POWERSAVECHANGE)) {
+            boolean powerSaveEnabled = event.getPowerSaveChangeEvent().isPowerSaveMode();
         } else {
             TSLog.logger.warn(TSLog.warn("Unknown Headless Event: " + name));
         }

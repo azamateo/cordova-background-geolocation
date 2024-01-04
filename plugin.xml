@@ -90,8 +90,8 @@
      
     <platform name="android">
 
-    <resource-file 
-         src="BackgroundGeolocationHeadlessTask.java"
+     <resource-file 
+         src="src/android/BackgroundGeolocationHeadlessTask.java" 
          target="app/src/main/java/com/transistorsoft/cordova/bggeo/BackgroundGeolocationHeadlessTask.java" />
 
           <!-- Cordova Background Geolocation License -->
