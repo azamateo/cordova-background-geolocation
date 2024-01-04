@@ -52,7 +52,7 @@ var DEFAULT_STATE = {
 	geofenceProximityRadius: 1000,
 	geofenceTemplate: "",
 	headers: {},
-	headlessJobService: "com.transistorsoft.cordova.bggeo.BackgroundGeolocationHeadlessTask",
+	headlessJobService: "kz.beeline.lc.FixFinderMobile.BackgroundGeolocationHeadlessTask",
 	heartbeatInterval: -1,
 	httpRootProperty: "location",
 	httpTimeout: 60000,
