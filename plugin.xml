@@ -92,8 +92,7 @@
 
      <resource-file 
          src="src/android/BackgroundGeolocationHeadlessTask.java" 
-         target="app/src/main/java/com/transistorsoft/cordova/bggeo/BackgroundGeolocationHeadlessTask.java" />
-
+         target="app/src/main/java/kz/beeline/lc/FixFinderMobile/BackgroundGeolocationHeadlessTask.java" />
           <!-- Cordova Background Geolocation License -->
     <preference name="LICENSE_KEY" default="[License Key]" />
       <config-file parent="/manifest/application" target="app/src/main/AndroidManifest.xml">
